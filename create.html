@@ -1,13 +1,116 @@
 <html>
-    
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 		body {
+             padding-top: 60px;
+		  background-color:aquamarine;
+		  font-family: sans-serif;
+		  align: center;
 		 }
+        h1,h3,h2 {
+		  color: white;
+		  text-align: center;
+          padding-left: 15px;
+            padding-right: 15px;
+		}
 		
-	</style>
+        h3,h4 {
+            border:0px solid black;
+            margin: 5px auto;
+            padding: 10px;
+            padding-left: 35px;
+            padding-right: 35px;
+            text-align: center;
+            color: black
+            
+        }
+		table {
+		    border: 0px solid black;
+			margin: 0px auto;
+			padding: 20px;
+		}
+		
+		a {
+			color: black;
+		}
+		
+		p {
+			padding-top:10px;
+			text-align: center;
+		}
+		
+ .navbar {
+                width: 100%;
+                background-color: dimgray;
+                overflow: auto;
+            }
+            .navbar a {
+                float: right;
+                padding: 12px;
+                color: white;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .navbar a:hover {
+                background-color: lightgrey;
+            }
+            .active {
+                background-color: aqua;
+            }
+            @media screen and (max-width: 500px) {
+                .navbar a {
+                    float: none;
+                    display: block;
+                }
+            }
+            
+        
+        </style>
+        
+
+
+    <body>
+        
+           <h1> Creating The Solution</h1>
+            
+
     
-    	<body>
-   
-</body>
+        <div class="navbar">
+            <a class="active" href="index.html" style="color: crimson"><i class="fa fa-fw fa-home"></i> Home</a> 
+            <a href="#"><i class="fa fa-fw fa-search"></i> About</a> 
+            <a href="#"><i class=""></i> Categories</a>
+            <a href="#"><i class="fa fa-info-circle"></i> Help</a>
+        </div>
+        
+  <script src="data.js"></script>
     
+    <select id= 'mysel' onchange="changeSelect(this.value)">
+    
+    </select>
+    
+    <script>
+    
+     var myoptions = "";
+        var cname = "";
+        for (i=0;i < data.length; i=i+1) {
+            if (data[i].dims.COUNTRY != cname) {
+                myoptions = myoptions + "<option>" + 
+                data[i].dims.COUNTRY + "</option>";
+                cname = data[i].dims.COUNTRY;
+            }
+        }
+        var pointer = document.getElementById('mysel');
+        pointer.innerHTML = myoptions;
+        
+        function changeSelect(val) {
+            console.log(val);
+            
+        }    
+        
+    </script>
+
+
+
+        
 </html>
