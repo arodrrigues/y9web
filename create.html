@@ -8,8 +8,8 @@
 		  font-family: sans-serif;
 		  align: center;
 		 }
-        h1,h3,h2 {
-		  color: white;
+        h1,h2 {
+		  color: black;
 		  text-align: center;
           padding-left: 15px;
             padding-right: 15px;
@@ -46,7 +46,7 @@
                 overflow: auto;
             }
             .navbar a {
-                float: right;
+                float: left;
                 padding: 12px;
                 color: white;
                 text-decoration: none;
@@ -68,48 +68,124 @@
         
         </style>
         
-
+      
 
     <body>
         
            <h1> Creating The Solution</h1>
+        
+         
             
 
     
         <div class="navbar">
             <a class="active" href="index.html" style="color: crimson"><i class="fa fa-fw fa-home"></i> Home</a> 
-            <a href="#"><i class="fa fa-fw fa-search"></i> About</a> 
-            <a href="#"><i class=""></i> Categories</a>
-            <a href="#"><i class="fa fa-info-circle"></i> Help</a>
+            <a href="#"><i class="fa fa-fw fa-search"></i> Changes</a> 
+            <a href="#"><i class=""></i> Main Webpage</a>
+            <a href="#"><i class="fa fa-info-circle"></i> Map</a>
         </div>
         
-  <script src="data.js"></script>
+        <h1> Deaths Attributed to Unintentional Poisoning per 100 000</h1>
     
-    <select id= 'mysel' onchange="changeSelect(this.value)">
+   <select id="optionMenu" onchange="optionMenuChanged()">
+     </select>
+    <select id="optionMenu1" onchange="optionMenuChanged()">
+     </select>
     
-    </select>
+    <p id="optionMenuP"></p>
+    <p id="optionMenu1P"></p>
+     
+<canvas id="Country1" width="500" height="450" style="border:1px solid #000000;">
+</canvas>
     
-    <script>
-    
-     var myoptions = "";
-        var cname = "";
-        for (i=0;i < data.length; i=i+1) {
-            if (data[i].dims.COUNTRY != cname) {
-                myoptions = myoptions + "<option>" + 
-                data[i].dims.COUNTRY + "</option>";
-                cname = data[i].dims.COUNTRY;
-            }
-        }
-        var pointer = document.getElementById('mysel');
-        pointer.innerHTML = myoptions;
-        
-        function changeSelect(val) {
-            console.log(val);
-            
-        }    
-        
-    </script>
+<canvas id="Country2" width="500" height="450" style="border:1px solid #000000;">
+</canvas>
+     
 
+
+    
+
+
+
+<script src="data.js"></script>
+    
+        
+    
+        <canvas id="mycanvas"></canvas>
+    
+    
+   <script>
+            var currentCountry = "Albania";
+            var currentCountry1 = "Albania";
+            
+            function optionMenuChanged() {
+                currentCountry = optionMenu.value;
+                currentCountry1 = optionMenu1.value;
+                let p = document.getElementById("optionMenuP");
+                let p1 = document.getElementById("optionMenu1P");
+                
+                p.innerHTML = "Mortality Rate Due to Unintentional Poisoning per 100 000 in " + countries[currentCountry] + " is: "
+                p1.innerHTML = "Mortality Rate Due to Unintentional Poisoning per 100 000 in " + countries[currentCountry1] + " is: "
+            }
+    
+            // % . 
+            // if(i % 3 == 0) {
+            // 
+            //}
+            
+            var c = 
+            document.getElementById('mycanvas');
+            var ctx = c.getContext('2d');
+            var options = {};
+            var countries = [];
+             var optionMenu = document.getElementById("optionMenu");
+            
+            for(let i = 0; i < data.length; i++) {
+                if(i != data.length-1) {
+                    if(data[i].dims.COUNTRY != data[i+1].dims.COUNTRY) {
+                        countries.push(data[i].dims.COUNTRY);
+                    }
+                } else {
+                    countries.push(data[i].dims.COUNTRY);
+                }
+            }
+            
+            for(i in countries) {
+                optionMenu.options[optionMenu.options.length] = new Option(countries[i], i);
+            }
+            for(i in countries) {
+                optionMenu1.options[optionMenu1.options.length] = new Option(countries[i], i);
+            }
+            
+//            for (i=0;data.length;i=i+1) {
+//                if (data[i].dims.country == "Canada") {
+//                    
+//                    }
+//            }
+
+ </script>
+
+     
+
+     
+   
+
+
+     
+     <script src="data.js"></script>
+
+<script>
+
+//console.log(data);
+    
+//    console.log(data[0].Value);
+    
+
+    
+</script>
+
+
+</html>
 
 
         
