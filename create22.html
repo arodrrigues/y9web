@@ -1,0 +1,284 @@
+<html>
+
+<html>
+
+    <style>
+		 #canvas{
+                width:100%;
+                height:250px;
+                background-color: azure;
+            }#button{
+                background-color: palevioletred;
+                border: none;
+                color: bl;
+                
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }body{
+                background-color: azure;
+            }#po{
+                background-color: blueviolet;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                
+            }#select{
+                background-color: skyblue;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }.icon-bar { 
+                width: 100%;
+                height: 80px;
+                background-color: #555;
+                overflow: auto;
+            } .icon-bar a {
+                float: left;
+                width: 50%;
+                height:80px;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.1s ease;
+                color: white;
+                font-size: 30px;
+            }.icon-bar a:hover {
+                background-color: #324;
+            }.active {
+                background-color: #4CAF50;
+            }.active1{
+                background-color: blue;
+            }h3{
+                font-family: "Times New Roman";
+                font-size: 40px;
+            }
+        body {
+             padding-top: 60px;
+		  background-color:aquamarine;
+		  font-family: sans-serif;
+		  align: center;
+		 }
+        h1,h2 {
+		  color: black;
+		  text-align: center;
+          padding-left: 15px;
+            padding-right: 15px;
+		}
+		
+        h3,h4 {
+            border:0px solid black;
+            margin: 5px auto;
+            padding: 10px;
+            padding-left: 35px;
+            padding-right: 35px;
+            text-align: center;
+            color: black
+            
+        }
+		table {
+		    border: 0px solid black;
+			margin: 0px auto;
+			padding: 20px;
+		}
+		
+		a {
+			color: black;
+		}
+		
+		p {
+			padding-top:10px;
+			text-align: center;
+		}
+		
+ .navbar {
+                width: 100%;
+                background-color: dimgray;
+                overflow: auto;
+            }
+            .navbar a {
+                float: left;
+                padding: 12px;
+                color: white;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .navbar a:hover {
+                background-color: lightgrey;
+            }
+            .active {
+                background-color: aqua;
+            }
+            @media screen and (max-width: 500px) {
+                .navbar a {
+                    float: none;
+                    display: block;
+                }
+            }
+            
+
+        
+        </style>
+        
+      
+
+    <body>
+        
+           <h1> Creating The Solution</h1>
+        
+        
+       
+
+    
+        <div class="navbar">
+            <a class="active" href="index.html" style="color: crimson"><i class="fa fa-fw fa-home"></i> Home</a> 
+            <a href=""><i class="fa fa-fw fa-search"></i> Changes</a> 
+            <a href="create22.html"><i class=""></i> Main Webpage</a>
+            <a href="map2.html"><i class="fa fa-info-circle"></i> Map</a>
+        </div>
+        
+        <h1> Deaths Attributed to Unintentional Poisoning per 100 000</h1>
+        
+        <h3> Pick 2 Countries</h3>
+        <select id="po">
+            <option value="pick">Pick a Country</option>
+        </select>
+        
+        <select id ="select">
+            <option value="pick">Pick a Country</option>
+        </select>
+        
+        <br>
+        <canvas id="canvas"></canvas>
+        <br>
+        <button id="button" type="button" onclick="Gdata()">Generate Data</button>
+        
+                
+             <p id="p"> </p>
+        <script src="data.js"></script>
+        
+        <script>
+            
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            
+            
+            function Gdata(){
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
+                canvas.width=canvas.getBoundingClientRect().width;
+                canvas.height=canvas.getBoundingClientRect().height;
+                
+                
+                var option = document.getElementById("po");
+                var counrty=option.value
+                
+                
+                
+                var option2 = document.getElementById("select");
+                var counrty=option2.value
+                
+
+                    
+                
+      for(i=0; i<data.length;i=i+1){
+    	if(data[i].dims.COUNTRY==COUNTRY){
+                  
+                    }
+                
+                }
+            
+                
+               for(i=0; i<data.length;i=i+1){
+    	if(data[i].dims.COUNTRY==country){
+                       
+                    }
+                
+                }
+             
+                
+                
+                ctx.fillStyle = 'azure';
+                ctx.fillRect(400,50,2000,20);
+                
+                
+                ctx.fillStyle="black";
+                ctx.font="20px Arial";
+                ctx.fillText("Male Poisonings",0,18);
+                
+                
+                async function Maledbar() {
+                    for(i=1;i<801;i++){
+                        ctx.fillStyle = "red";
+	                    ctx.fillRect(0,30,Value/200*i,15);
+                        ctx.fillStyle="blue"
+                        ctx.fillRect(0,45,Value2/200*i,15)
+                        ctz.fillRect
+                        await sleep(5);
+                    }
+                }Maledbar();
+                
+                
+                ctx.fillStyle="black";
+                ctx.font="20px Arial";
+                ctx.fillText("Female Posionings",0,98);
+                
+                
+                async function Femalebar() {
+                    for(i=1;i<801;i++){
+                        ctx.fillStyle = "red";
+	                    ctx.fillRect(0,110,Value/200*i,15);
+                        ctx.fillStyle="blue";
+                        ctx.fillRect(0,125,Value2/200*i,15);
+                        await sleep(5);
+                    }
+                }Femalebar();
+                
+            
+                
+                
+                if(Male==1000){
+                    Male="<1000";
+                }else{
+                    Male*1000;
+                }
+                async function texter(){
+                    await sleep(1720)
+                    ctx.fillStyle="black";
+                    ctx.font="10px Arial";
+                    ctx.fillText((Male)*1000 + " deaths",Male + 5, 40);
+                    ctx.fillText((Male2)*1000 + " deaths",Male2 + 5, 55);
+                    ctx.fillText((Female)*1000 + " deaths",Female + 5, 120);
+                    ctx.fillText((Female2)*1000 + " deaths",Female2 + 5, 135)
+                }texter()
+            }
+            
+        </script>
+        
+        
+        <script>
+                i=0;
+         str="<option value='pick'>Pick A Country</option>";
+        while(i<data.length){
+            var v=data[i].dims.COUNTRY;
+            str=str+ "<option value=" + "'"+ v + "'"+">" + v +"</option>" 
+            i=i+15;
+        }
+        document.getElementById("po").innerHTML=str
+        document.getElementById("select").innerHTML=str
+      
+        
+        
+        </script>
+        <h2> Unable To Work</h2>
+    </body>
+
+</html>
